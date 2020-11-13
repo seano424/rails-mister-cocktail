@@ -1,0 +1,20 @@
+<%= render "nav" %>
+
+<div class="container">
+  <h4 class="createBtn"><%= link_to "Create a cocktail", new_cocktail_path %></h4>
+  <div class="row row-cols-1 row-cols-md-3">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="<%= cocktail.image %>" class="card-img-top cocktail-img" alt="...">
+        <div class="card-body cocktail-body">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <%= link_to 'See more', cocktail %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
+

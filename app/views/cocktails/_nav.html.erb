@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <a class="navbar-brand" href="#">Mr. Cocktail</a> -->
+  <%= link_to 'Mister Cocktail', root_path, class: "navbar-brand" %> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <!-- <%= link_to 'New Cocktail', new_cocktail_path, class: "nav-link" %>
+      <%= link_to 'Back to home', cocktails_path, class: "nav-link" %> -->
+      <%= link_to new_cocktail_path, :class=> "nav-link" do %>
+          <i class="fa fa-plus-circle" aria-hidden="true" target="_blank"></i>
+      <% end %>
+      <%= link_to root_path, :class=> "nav-link" do %>
+          <i class="fas fa-home" aria-hidden="true" target="_blank"></i>
+      <% end %>
+    </div>
+  </div>
+</nav>

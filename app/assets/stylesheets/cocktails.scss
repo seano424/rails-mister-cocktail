@@ -3,15 +3,23 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Giga&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Vidaloka&display=swap");
+
+body {
+  font-family: "Vidaloka", serif;
+}
 
 .container {
-  h4, h5 {
-
-    font-family: 'Vidaloka', serif;
+  h1,
+  h4,
+  h5 {
+    font-family: "Vidaloka", serif;
   }
   margin-top: 20px;
   width: 75vw;
+  background-color: white;
+  padding: 30px;
+  border-radius: 7px;
 }
 
 .card {
@@ -38,6 +46,4 @@
 }
 
 .createBtn {
-  
-
 }

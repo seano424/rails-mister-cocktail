@@ -1,32 +1,39 @@
 <%= render "nav" %>
 
 <div class="container container-show">
-  <h1><%= @cocktail.name %></h1>
-  <div class="row row-cols-1 row-cols-md-2">
-    <div class="col mb-4">
-      <div class="card">
-        <img src="<%= @cocktail.image %>" class="card-img-top cocktail-img" alt="...">
+  <div class="row">
+    <div class="col-6 mb-4">
+
+      <div class="card bg-light">
         <div class="card-body cocktail-body">
-          <h5 class="card-title"><%= @cocktail.name %></h5>
+          <h1 class="mb-3"><%= @cocktail.name %></h1>
+          <img src="<%= @cocktail.image %>" class="card-img-top cocktail-img" alt="...">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+      <div class="card bg-light">
+        <div class="card-body cocktail-body">
+          <h1 class="mb-4">Ingredients</h1>
+
           <% @cocktail.doses.each do |dose| %>
-            <div class="ingredient-display d-flex row">
-              <div class="col-6">
-                <h5 class="card-title"><%= dose.ingredient.name %></h5>
-              </div>
-              <div class="col-6">
-                <%= link_to 'Delete', dose_path(dose),  method: :delete %>
-              </div>
+          <div class="ingredient-display d-flex row">
+            <div class="col-6">
+              <h5 class="card-title"><%= dose.ingredient.name %></h5>
             </div>
-          <% end %>
-          <div class="doses-btn">
-            <%= link_to 'Change the doses', new_cocktail_dose_path(@cocktail) %>
+            <div class="col-6">
+              <%= link_to 'Delete', dose_path(dose),  method: :delete %>
+            </div>
           </div>
-          <div class="back-to-home">
+          <% end %>
+          <div class="show-btn">
+            <%= link_to 'Add some doses', new_cocktail_dose_path(@cocktail) %>
+          </div>
+          <div class="show-btn">
             <%= link_to 'Back to home', cocktails_path %>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
